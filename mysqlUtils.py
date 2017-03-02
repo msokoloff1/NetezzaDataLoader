@@ -3,7 +3,7 @@ from connectionUtils import Connection
 import string 
 
 class MYSQLConnection(Connection):
-	def __init__(self,  targetDriver="iLearnFederated", targetDB = "fed"):
+	def __init__(self,  targetDriver="mysqlDSN", targetDB = "fed"):
 		super().__init__(targetDriver, targetDB)
 		self.tables = [index[0] for index in self.getSQLResult("show tables")]
 
