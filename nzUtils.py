@@ -3,7 +3,7 @@ from connectionUtils import Connection
 import re
 
 class NZConnection(Connection):
-	def __init__(self, targetDriver="NZSQL", targetDB ="MARISTDATAWAREHOUSE"):
+	def __init__(self, targetDriver="NZSQL", targetDB ="databaseName"):
 		super().__init__(targetDriver, targetDB)
 		self.tables = [index[0] for index in self.getSQLResult("SELECT TABLENAME FROM "+targetDB+"._V_TABLE")]
 
